@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
-
+#include <stddef.h>
 /**
   * _print_format - Prints a specified format
   * @format: The format to print
@@ -63,6 +63,10 @@ int _print_spec(char format, va_list args)
 		{"s", print_s},
 		{"d", print_i},
 		{"i", print_i},
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2ea01eecc60c8e6d449ff007224a0f95079245cf
 		{NULL, NULL}
 	};
 
