@@ -3,9 +3,8 @@
 #include "main.h"
 
 /**
- * _printf(const char *format, ...) - prints number of characters
+ * _printf - prints number of characters
  * @format: string of characters
- *
  * Return: number of characters
  */
 int _printf(const char *format, ...)
