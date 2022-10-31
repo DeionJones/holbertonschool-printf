@@ -3,9 +3,9 @@
 #include "main.h"
 
 /**
- * int _printf(const char *format, ...) - prints number of characters
+ * _printf - prints number of characters
  * @format: string of characters
- * Return - number of characters
+ * Return: number of characters
  */
 int _printf(const char *format, ...)
 {
@@ -19,4 +19,4 @@ int _printf(const char *format, ...)
 	length = _print_format(format, args);
 	va_end(args);
 	return (length);
-}	
+}
