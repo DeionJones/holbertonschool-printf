@@ -1,6 +1,15 @@
+#ifndef _MAIN_H_
+#define _MAIN_H_
 #include <stdarg.h>
-#ifndef main_h
-#define main_h
+/**
+ * struct specifiers - struct specifiers
+ * @specifier:  The conversion specifier
+ * @f: The function pointer
+ */
+typedef struct specifiers {
+  char *specifier;
+  int (*f)(va_list args);
+} spc_dt;
 
 int _printf(const char *format, ...);
 int _strlen(char *s);
