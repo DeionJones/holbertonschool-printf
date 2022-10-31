@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdlib.h>
+#include <stdarg.h>
 
 /**
  * _print_format - Prints a format
@@ -23,7 +23,7 @@ int _print_format(const char *format, va_list args) {
         i++;
 
       if (format[i] == '%')
-        count += _write(format[i]);
+        count += _putchar(format[i]);
 
       if (_validate_char(format[i]) == 0) {
         count = _print_invalid_spec(format[i - 1], format[i], count);
@@ -31,7 +31,7 @@ int _print_format(const char *format, va_list args) {
         count += _print_spec(format[i], args);
       }
     } else {
-      count += _write(format[i]);
+      count += _putchar(format[i]);
     }
 
     i++;

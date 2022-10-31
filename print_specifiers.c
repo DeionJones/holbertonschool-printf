@@ -1,80 +1,88 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdarg.h>
 
 /**
  * print_c - print a char
- * @ar: char to print
+ * @args: list of variadic args
  *
- * Return: void
+ * Return: Length of character
  */
-void print_c(va_list ar) {
-  _putchar(va_arg(ar int));
-  return (1);
+void print_c(va_list args)
+{
+	_putchar(va_arg(args, int));
+	return (1);
 }
 /**
  * print_s - prints a string
- * @ar: string to print
+ * @args: list of variadic arguments
  *
  * Return: length of string
  */
-void print_s(va_list ar) {
-  char *arg = va_arg(arg, char *);
-  int i = 0;
+void print_s(va_list args)
+{
+	char *ar = va_arg(args, char *);
+	int i = 0;
 
-  if (s != NULL) {
-    while (s[i]) {
-      _putchar(s[i]);
-      i++;
-    }
-
-    return (i);
-  }
-
-  _putchar('(');
-  _putchar('n');
-  _putchar('u');
-  _putchar('l');
-  _putchar('l');
-  _putchar(')');
-  return (6);
+	if (ar != NULL)
+	{
+		while (ar[i])
+		{
+			_putchar(ar[i]);
+			i++;
+		}
+		return (i);
+	}
+	_putchar('(');
+	_putchar('n');
+	_putchar('u');
+	_putchar('l');
+	_putchar('l');
+	_putchar(')');
+	return (6);
 }
 /**
  * print_i - prints an int
- * @ar: int to print
+ * @args: a list of variadic arguments
  *
- * Return: void
+ * Return: length if string
  */
-void print_i(va_list ar) {
-  int count = 1, m = 0;
-  unsigned int n = 0;
+void print_i(va_list args)
+{
+	int count = 1, m = 0;
+	unsigned int n = 0;
 
-  n = va_arg(ar, int);
-  m = n;
-  if (m < 0) {
-    _putchar('-');
-    m = m * -1;
-    n = m;
-    count += 1;
-  }
-  while (n > 9) {
-    n = n / 10;
-    count++
-  }
+	n = va_arg(args, int);
+	m = n;
+	if (m < 0)
+	{
+		_putchar('-');
+		m = m * -1;
+		n = m;
+		count += 1;
+	}
+	while (n > 9)
+	{
+		n = n / 10;
+		count++;
+	}
 
-  _recursion_integer(m);
-  return (count);
+	_recursion_integer(m);
+	return (count);
+
 }
 /**
  * _recursion_integer - prints an integer
- * @i: integer to print
+ * @a: integer to print
  *
  * Return: Nothing
  */
-void _recursion_integer(int i) {
-  unsigned int t;
+void _recursion_integer(int a)
+{
+	unsigned int t;
 
-  t = a;
-  if (t / 10)
-    _recursion_integer(t / 10);
-  _putchar(t % 10 + '0');
+	t = a;
+	if (t / 10)
+		_recursion_integer(t / 10);
+	_putchar(t % 10 + '0');
 }
