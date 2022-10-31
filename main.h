@@ -15,9 +15,9 @@ typedef struct specifiers
 int _printf(const char *format, ...);
 int _strlen(char *s);
 int _putchar(char c);
-void print_c(va_list args);
-void print_s(va_list args);
-void print_i(va_list args);
-void _recursion_integer(int t);
+int print_c(va_list args);
+int print_s(va_list args);
+int print_i(va_list args);
+int _recursion_integer(int t);
 
 #endif /* _MAIN_H_ */

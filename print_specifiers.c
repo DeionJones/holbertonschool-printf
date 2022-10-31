@@ -8,7 +8,7 @@
  *
  * Return: Length of character
  */
-void print_c(va_list args)
+int print_c(va_list args)
 {
 	_putchar(va_arg(args, int));
 	return (1);
@@ -19,7 +19,7 @@ void print_c(va_list args)
  *
  * Return: length of string
  */
-void print_s(va_list args)
+int print_s(va_list args)
 {
 	char *ar = va_arg(args, char *);
 	int i = 0;
@@ -47,7 +47,7 @@ void print_s(va_list args)
  *
  * Return: length if string
  */
-void print_i(va_list args)
+int print_i(va_list args)
 {
 	int count = 1, m = 0;
 	unsigned int n = 0;
@@ -77,7 +77,7 @@ void print_i(va_list args)
  *
  * Return: Nothing
  */
-void _recursion_integer(int a)
+int _recursion_integer(int a)
 {
 	unsigned int t;
 
@@ -85,4 +85,5 @@ void _recursion_integer(int a)
 	if (t / 10)
 		_recursion_integer(t / 10);
 	_putchar(t % 10 + '0');
+	return (0);
 }
