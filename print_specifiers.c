@@ -78,7 +78,7 @@ void print_i(va_list ar)
  *
  * Return: Nothing
  */
-void _recursion_iteger(int i)
+void _recursion_integer(int i)
 {
 	unsigned int t;
 
