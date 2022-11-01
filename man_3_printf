@@ -13,7 +13,7 @@ DESCRIPTION
 EXAMPLES
     #include "main.h"
 
-    _printf("Hello World"); 
+    _printf("Hello World");
     Some examples of common usage.
 SEE ALSO
     A list of related commands or functions.
