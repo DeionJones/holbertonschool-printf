@@ -8,12 +8,15 @@
  *
  * Return: The length of the format
  */
-int _print_format(const char *format, va_list args) {
+int _print_format(const char *format, va_list args)
+{
   int count = 0;
   int i = 0;
 
-  while (format && format[i]) {
-    if (format[i] == '%') {
+  while (format && format[i])
+  {
+    if (format[i] == '%')
+	{
       if (format[i + 1] == '\0')
         return (-1);
 
@@ -25,12 +28,17 @@ int _print_format(const char *format, va_list args) {
       if (format[i] == '%')
         count += _putchar(format[i]);
 
-      if (_validate_char(format[i]) == 0) {
+      if (_validate_char(format[i]) == 0)
+	  {
         count = _print_invalid_spec(format[i - 1], format[i], count);
-      } else {
+      }
+	  else
+	  {
         count += _print_spec(format[i], args);
       }
-    } else {
+    }
+	else
+	{
       count += _putchar(format[i]);
     }
 
@@ -47,7 +55,8 @@ int _print_format(const char *format, va_list args) {
  *
  * Return: The length of the specifier
  */
-int _print_spec(char format, va_list args) {
+int _print_spec(char format, va_list args)
+{
   int i = 0, length = 0;
   spc_dt _types[] = {{"c", print_c},
                      {"s", print_s},
@@ -55,7 +64,8 @@ int _print_spec(char format, va_list args) {
                      {"i", print_i},
                      {NULL, NULL}};
 
-  while (_types[i].specifier) {
+  while (_types[i].specifier)
+  {
     if (*_types[i].specifier == format)
       length = _types[i].f(args);
 
@@ -73,10 +83,12 @@ int _print_spec(char format, va_list args) {
  *
  * Return: The current count after prints invalid specifiers
  */
-int _print_invalid_spec(char prev_format, char format, int count) {
+int _print_invalid_spec(char prev_format, char format, int count)
+{
   count += _putchar('%');
 
-  if (prev_format == ' ') {
+  if (prev_format == ' ')
+  {
     count += _putchar(' ');
     count += _putchar(format);
   } else {
@@ -92,7 +104,8 @@ int _print_invalid_spec(char prev_format, char format, int count) {
  *
  * Return: 1 if char is equal to a type
  */
-int _validate_char(char _type) {
+int _validate_char(char _type)
+{
   char _types[] = {'c', 's', 'd', 'i', '%'};
   int i = 0;
 
